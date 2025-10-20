@@ -13,7 +13,7 @@ body {
 .liquid-menu a {
   font-size: 1.2rem;
   margin: 0 15px;
-  color: #fff;
+  color: #222;
   text-decoration: none;
   filter: url(#liquid);
   transition: filter 0.3s ease;
