@@ -1,13 +1,25 @@
-body {
+/* Reset & base */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0b0b0d;
-  color: #fff;
+  padding: 0;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff;       /* clean background */
+  color: #222;            /* teks gelap */
+  line-height: 1.5;
+}
+
+/* Header & Menu Liquid */
 .site-header {
   padding: 20px;
   text-align: center;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .liquid-menu a {
@@ -16,13 +28,14 @@ body {
   color: #222;
   text-decoration: none;
   filter: url(#liquid);
-  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, color 0.3s ease;
 }
 .liquid-menu a:hover {
   filter: none;
   color: #ff5b2d;
 }
 
+/* Hero Section */
 .hero {
   text-align: center;
   padding: 80px 20px;
@@ -33,52 +46,58 @@ body {
   margin: 20px 0 10px;
 }
 .hero p {
-  color: #aaa;
+  color: #555;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
+/* Peta Indonesia */
 .indo-map {
   width: 80%;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   display: block;
 }
 .region {
-  fill: #ddd; /* abu redup */
+  fill: #ddd;   /* redup */
   stroke: #aaa;
+  stroke-width: 1;
   transition: fill 1s ease, filter 1s ease;
-
 }
 .region.glow {
   fill: #ff5b2d;
   filter: drop-shadow(0 0 6px #ff5b2d) drop-shadow(0 0 12px #ff5b2d);
-
 }
 
+/* Portfolio Grid */
 .portfolio-grid {
- display: grid;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
   padding: 60px 40px;
-  background: #fafafa; /* beda tone biar jelas */
+  background: #fafafa; /* sedikit abu biar beda tone */
 }
 .card {
   position: relative;
-  background: #222;
+  background: #fff;
   padding: 20px;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 .card::before {
   content: "";
   position: absolute;
   top: 50%; left: 50%;
   width: 0; height: 0;
-  background: radial-gradient(circle, rgba(255,91,45,0.6) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,91,45,0.4) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   border-radius: 50%;
   opacity: 0;
@@ -88,5 +107,15 @@ body {
   width: 400%; height: 400%;
   opacity: 1;
 }
-.card h3 { margin: 0 0 10px; }
-.card a { color: #ff5b2d; text-decoration: none; }
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+.card a {
+  color: #ff5b2d;
+  text-decoration: none;
+  font-weight: 600;
+}
+.card a:hover {
+  text-decoration: underline;
+}
