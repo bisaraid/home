@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bisara — Nusantara Go Digital</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bisara Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- SVG filter untuk efek liquid -->
+  <svg style="display:none">
+    <filter id="liquid">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="20"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </svg>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-container">
-    <!-- Inline SVG peta Indonesia -->
-    <svg class="indonesia" viewBox="0 0 1000 600">
-      <path d="M100,100 L150,100 L150,150 L100,150 Z" class="province"/>
-      <path d="M200,100 L250,100 L250,150 L200,150 Z" class="province"/>
-      <path d="M300,100 L350,100 L350,150 L300,150 Z" class="province"/>
-      <path d="M400,100 L450,100 L450,150 L400,150 Z" class="province"/>
-      <path d="M500,100 L550,100 L550,150 L500,150 Z" class="province"/>
+  <!-- Header dengan menu liquid -->
+  <header class="site-header">
+    <nav class="liquid-menu">
+      <a href="#pos">POS</a>
+      <a href="#laundry">Laundry</a>
+      <a href="#hr">HR</a>
+      <a href="#booking">Booking</a>
+      <a href="#inventory">Inventory</a>
+    </nav>
+  </header>
+
+  <!-- Hero dengan peta Indonesia -->
+  <section class="hero">
+    <svg class="indo-map" viewBox="0 0 800 400">
+      <!-- Dummy path, ganti dengan path peta Indonesia -->
+      <path class="region" d="M100,200 L150,180 L180,220 Z" />
+      <path class="region" d="M250,220 L280,200 L310,240 Z" />
+      <path class="region" d="M400,180 L430,160 L460,200 Z" />
+      <path class="region" d="M550,220 L580,200 L610,240 Z" />
     </svg>
+    <h1>Bisara Studio</h1>
+    <p>Mencipta pengalaman digital yang joyful dan bermakna</p>
+  </section>
 
-    <div class="hero-text">
-      <h1>Bisara</h1>
-      <p>Bisnis Nusantara Go Digital</p>
-      <a href="#portfolio" class="btn">Lihat Sistem Kami</a>
-    </div>
-
-    <!-- Auto-scroll ticker -->
-    <div class="ticker">
-      <div class="ticker-track">
-        <span>Bisara POS &nbsp;•&nbsp; Bisara Laundry &nbsp;•&nbsp; Bisara HR &nbsp;•&nbsp; Bisara Booking &nbsp;•&nbsp; Bisara Inventory &nbsp;•&nbsp; Bisara Property &nbsp;•&nbsp; Bisara Promo &nbsp;•&nbsp; Bisara Workshop &nbsp;•&nbsp; Bisara eLearning &nbsp;•&nbsp; Bisara Clinic &nbsp;•&nbsp;</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Peek Menu Button -->
-  <div class="menu-peek" id="menuPeek">☰</div>
-
-  <!-- Liquid Menu Overlay -->
-  <div class="menu-overlay" id="menuOverlay">
-    <div class="menu-content">
-      <ul>
-        <li><a href="#portfolio">Portofolio</a></li>
-        <li><a href="#cta">Kontak</a></li>
-        <li><a href="#">Tentang</a></li>
-        <li><a href="#">Demo</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
-      <div class="menu-close" id="menuClose">✕</div>
-    </div>
-  </div>
-</section>
-
-<!-- Portfolio Section -->
-<section id="portfolio" class="container">
-  <h2>Portofolio Sistem Bisara</h2>
-  <div class="portfolio-grid">
+  <!-- Portfolio Grid -->
+  <section class="portfolio-grid">
     <div class="card"><h3>Bisara POS</h3><p><a href="https://github.com/username/bisara-pos" target="_blank">Coba Demo</a></p></div>
     <div class="card"><h3>Bisara Laundry</h3><p><a href="https://github.com/username/bisara-laundry" target="_blank">Coba Demo</a></p></div>
     <div class="card"><h3>Bisara HR</h3><p><a href="https://github.com/username/bisara-hr" target="_blank">Coba Demo</a></p></div>
@@ -66,21 +59,8 @@
     <div class="card"><h3>Bisara Workshop</h3><p><a href="https://github.com/username/bisara-workshop" target="_blank">Coba Demo</a></p></div>
     <div class="card"><h3>Bisara eLearning</h3><p><a href="https://github.com/username/bisara-elearning" target="_blank">Coba Demo</a></p></div>
     <div class="card"><h3>Bisara Clinic</h3><p><a href="https://github.com/username/bisara-clinic" target="_blank">Coba Demo</a></p></div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA WhatsApp -->
-<section id="cta" class="cta">
-  <div class="container">
-    <h2>Siap Mencoba Bisara?</h2>
-    <a href="https://wa.me/6285966189998" target="_blank" class="btn">Hubungi via WhatsApp</a>
-  </div>
-</section>
-
-<footer>
-  &copy; 2025 Bisara — Semua hak cipta dilindungi.
-</footer>
-
-<script src="js/main.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
